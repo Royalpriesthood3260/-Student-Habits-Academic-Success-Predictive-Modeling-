@@ -88,9 +88,8 @@ Raw Data → Preprocessing → EDA → Remove exam_score → Train/Test Split
 
 ```
 ├── Student_Habits_Academic_Success.Rmd
-├── Student_Habits_Academic_Success.html
-├── student_habits_performance.csv 
-└── README.md                      # This file
+├── student_habits_performance.csv
+└── README.md
 ```
 
 ---
@@ -154,10 +153,12 @@ All 8 models were evaluated on a held-out 30% test set and with **10-fold cross-
 
 ## ▶️ How to Run
 
+> 🌐 **View the full published report on RPubs:** [Student Habits & Academic Success](https://rpubs.com/Priesthood162002/1439127)
+
 1. Clone or download this repository
 2. Place `student_habits_performance.csv` in the same folder as the `.Rmd` file
 3. Open `Student_Habits_Academic_Success.Rmd` in RStudio
-4. Install required packages:
+4. Install required packages and knit locally:
 
 ```r
 install.packages(c(
@@ -167,7 +168,7 @@ install.packages(c(
 ))
 ```
 
-5. Click **Knit** → generates a self-contained HTML report
+
 
 > 💡 `kernlab` is required for `svmLinear`, `svmPoly`, and `svmRadial` inside caret's `train()`.
 
