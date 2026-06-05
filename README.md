@@ -1,4 +1,4 @@
-# 🎓 Student Habits & Academic Success — Predictive Modeling in R
+# 🎓 Student Habits & Academic Success — Predictive Modeling
 
 ![Language](https://img.shields.io/badge/Language-R-276DC3?style=flat-square&logo=r)
 ![Models](https://img.shields.io/badge/Models-8%20Classifiers-brightgreen?style=flat-square)
