@@ -22,7 +22,7 @@
 
 ## 🗂️ Dataset
 
-- **Source:** [Kaggle — Student Habits vs Academic Performance](https://www.kaggle.com/datasets/jayaantanaath/student-habits-vs-academicperformance)
+- **Source:** [Kaggle — Student Habits vs Academic Performance](https://www.kaggle.com/datasets/jayaantanaath/student-habits-vs-academic-performance)
 - **Size:** 1,000 students · 16 variables · No missing values
 - **Outcome:** `pass_fail` — binary label created from `exam_score` (≥ 70 = pass), then `exam_score` removed before modeling to prevent data leakage
 
