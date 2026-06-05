@@ -87,7 +87,7 @@ Raw Data → Preprocessing → EDA → Remove exam_score → Train/Test Split
 ## 📁 Project Structure
 
 ```
-├── Student_Habits_Academic_Success.Rmd
+├── Student Habits & Academic Success — Predictive Modeling.Rmd
 ├── student_habits_performance.csv
 └── README.md
 ```
@@ -157,7 +157,7 @@ All 8 models were evaluated on a held-out 30% test set and with **10-fold cross-
 
 1. Clone or download this repository
 2. Place `student_habits_performance.csv` in the same folder as the `.Rmd` file
-3. Open `Student_Habits_Academic_Success.Rmd` in RStudio
+3. Open `Student Habits & Academic Success — Predictive Modeling.Rmd` in RStudio
 4. Install required packages and knit locally:
 
 ```r
