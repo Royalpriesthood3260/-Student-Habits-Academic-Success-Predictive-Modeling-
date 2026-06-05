@@ -153,7 +153,7 @@ All 8 models were evaluated on a held-out 30% test set and with **10-fold cross-
 
 ## ▶️ How to Run
 
-> 🌐 **View the full published report on RPubs:** [Student Habits & Academic Success](https://rpubs.com/Priesthood162002/1439127)
+> 🌐 **View the full published report on RPubs:** [Student Habits & Academic Success](https://rpubs.com/Priesthood162002/1439164)
 
 1. Clone or download this repository
 2. Place `student_habits_performance.csv` in the same folder as the `.Rmd` file
