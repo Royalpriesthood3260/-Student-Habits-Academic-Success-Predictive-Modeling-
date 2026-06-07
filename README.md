@@ -25,6 +25,7 @@
 - **Source:** [Kaggle — Student Habits vs Academic Performance](https://www.kaggle.com/datasets/jayaantanaath/student-habits-vs-academic-performance)
 - **Size:** 1,000 students · 16 variables · No missing values
 - **Outcome:** `pass_fail` — binary label created from `exam_score` (≥ 70 = pass), then `exam_score` removed before modeling to prevent data leakage
+- **Class Balance:** 511 pass · 489 fail — nearly perfectly balanced, so accuracy is a reliable metric and no resampling was needed
 
 | Variable | Type | Description |
 |---|---|---|
@@ -115,6 +116,20 @@ Raw Data → Preprocessing → EDA → Remove exam_score → Train/Test Split
 
 ---
 
+## 🔬 Diagnostic Tests
+
+Run on both logistic regression models to check core assumptions.
+
+| Test | Result | What It Means |
+|---|---|---|
+| VIF — Full GLM | All values acceptable | No serious multicollinearity in the full model |
+| VIF — Stepwise GLM | All values acceptable | Trimming variables kept collinearity low |
+| Class Balance Check | 511 pass · 489 fail | Nearly perfect balance — accuracy is a reliable metric, no resampling needed |
+| Probability Distribution | Two well-separated peaks | Model assigns high confidence to most predictions — good calibration |
+| Precision-Recall Curve | Strong AUC | Model maintains high precision even as recall increases |
+
+---
+
 ## 🏆 Model Results
 
 All 8 models were evaluated on a held-out 30% test set and with **10-fold cross-validation**. CV Accuracy reflects the average across 10 folds on the training data.
@@ -151,6 +166,23 @@ All 8 models were evaluated on a held-out 30% test set and with **10-fold cross-
 
 ---
 
+## 📌 Project Summary
+
+This project applies eight classification models to predict whether a student passes or fails based on lifestyle and habit data from 1,000 students. The dataset was nearly perfectly balanced (511 pass / 489 fail), making accuracy a reliable metric without any resampling. Stepwise logistic regression came out on top with 93.31% test accuracy and 89.02% CV accuracy — the best of any model.
+
+The clearest finding: **study hours per day and mental health are the two variables that actually separate passing from failing students.** Part-time jobs and attendance, both commonly assumed to matter a lot, turned out to be much weaker signals than expected.
+
+---
+
+## ⚠️ Limitations
+
+- **Fixed pass/fail threshold.** Using 70 as the cutoff is a reasonable starting point but means a student scoring 69 and one scoring 40 are treated the same — some nuance in the outcome is lost.
+- **Self-reported variables.** Study hours, sleep, and mental health ratings are self-reported, so actual behavior may not perfectly match what students logged.
+- **Small dataset.** 1,000 rows is workable but on the smaller side for comparing eight models — results could shift with a larger sample.
+- **No institutional context.** There's no information about school type, course difficulty, or country, which likely affect both habits and outcomes.
+
+---
+
 ## ▶️ How to Run
 
 > 🌐 **View the full published report on RPubs:** [Student Habits & Academic Success](https://rpubs.com/Priesthood162002/1439164)
@@ -167,8 +199,6 @@ install.packages(c(
   "pROC", "randomForest", "reshape2", "scales"
 ))
 ```
-
-
 
 > 💡 `kernlab` is required for `svmLinear`, `svmPoly`, and `svmRadial` inside caret's `train()`.
 
