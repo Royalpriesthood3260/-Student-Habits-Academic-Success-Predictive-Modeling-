@@ -158,10 +158,10 @@ All 8 models were evaluated on a held-out 30% test set and with **10-fold cross-
 ## 🔍 Key Findings
 
 - 📚 **Study hours per day** was the single strongest predictor across all models. The random forest variable importance plot confirms this clearly.
-- 🧠 **Mental health** had a meaningful effect — students with lower self-reported mental health scores were significantly more likely to fail.
+- 🧠 **Mental health** had a meaningful effect. students with lower self-reported mental health scores were significantly more likely to fail.
 - 💼 **Part-time jobs** had a surprisingly small impact. The data does not support the common assumption that working strongly hurts grades.
 - 🏫 **Attendance alone** was a weak predictor. Quality of study time matters more than simply showing up.
-- 🔬 **Stepwise logistic regression** trimmed the predictor set to only the most informative variables — comparing it to the full model reveals which lifestyle factors are genuinely independent contributors.
+- 🔬 **Stepwise logistic regression** trimmed the predictor set to only the most informative variables, comparing it to the full model reveals which lifestyle factors are genuinely independent contributors.
 - 🏆 **GLM Stepwise** was the best overall model with the highest CV accuracy (89.02%), strong test accuracy (93.31%), and a Kappa of 0.866.
 
 ---
@@ -176,9 +176,9 @@ The clearest finding: **study hours per day and mental health are the two variab
 
 ## ⚠️ Limitations
 
-- **Fixed pass/fail threshold.** Using 70 as the cutoff is a reasonable starting point but means a student scoring 69 and one scoring 40 are treated the same — some nuance in the outcome is lost.
+- **Fixed pass/fail threshold.** Using 70 as the cutoff is a reasonable starting point but means a student scoring 69 and one scoring 40 are treated the same.
 - **Self-reported variables.** Study hours, sleep, and mental health ratings are self-reported, so actual behavior may not perfectly match what students logged.
-- **Small dataset.** 1,000 rows is workable but on the smaller side for comparing eight models — results could shift with a larger sample.
+- **Small dataset.** 1,000 rows is workable but on the smaller side for comparing eight models, results could shift with a larger sample.
 - **No institutional context.** There's no information about school type, course difficulty, or country, which likely affect both habits and outcomes.
 
 ---
